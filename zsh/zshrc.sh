@@ -1,7 +1,7 @@
 # Vars
 	HISTFILE=~/.zsh_history
-	SAVEHIST=1000 
-	setopt inc_append_history # To save every command before it is executed 
+	SAVEHIST=1000
+	setopt inc_append_history # To save every command before it is executed
 	setopt share_history # setopt inc_append_history
 
 	git config --global push.default current
@@ -9,7 +9,7 @@
 # Aliases
 	alias v="vim -p"
 	mkdir -p /tmp/log
-	
+
 	# This is currently causing problems (fails when you run it anywhere that isn't a git project's root directory)
 	# alias vs="v `git status --porcelain | sed -ne 's/^ M //p'`"
 
@@ -21,7 +21,7 @@ source ~/dotfiles/zsh/plugins/fixls.zsh
 #Functions
 	# Loop a command and show the output in vim
 	loop() {
-		echo ":cq to quit\n" > /tmp/log/output 
+		echo ":cq to quit\n" > /tmp/log/output
 		fc -ln -1 > /tmp/log/program
 		while true; do
 			cat /tmp/log/program >> /tmp/log/output ;
@@ -35,7 +35,7 @@ source ~/dotfiles/zsh/plugins/fixls.zsh
 # Custom cd
 chpwd() ls
 
-# For vim mappings: 
+# For vim mappings:
 	stty -ixon
 
 # Completions
@@ -63,6 +63,7 @@ source ~/dotfiles/zsh/plugins/vi-mode.plugin.zsh
 source ~/dotfiles/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/dotfiles/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/dotfiles/zsh/keybindings.sh
+source ~/dotfiles/zsh/aliases.zsh
 
 # Fix for arrow-key searching
 # start typing + [Up-Arrow] - fuzzy find history forward
